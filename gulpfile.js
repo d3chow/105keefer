@@ -10,7 +10,7 @@ var paths = {
         watch: './less/**/*',
         dest: './docs/css',
     }
-}docs
+}
 
 // Define css gulp tasks
 gulp.task('css-clean', function () {
