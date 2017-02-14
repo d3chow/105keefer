@@ -220,7 +220,9 @@ var EmailApp = (function($) {
         send: '.js-send',
         input: '.js-input',
         customInput: '.js-input-custom',
-        chinatownRelationship: '.js-fieldset-relationship'
+        chinatownRelationship: '.js-fieldset-relationship',
+        reasons: '.js-fieldset-reasons',
+        alternatives: '.js-fieldset-alternative'
     }
 
     var text = '';
@@ -263,21 +265,29 @@ var EmailApp = (function($) {
         return TextBank[key][randNum];
     }
 
-    var _checkCheckBoxes = function(el) {
+    var _checkCheckBoxes = function(el, list) {
         var inputArray = $(el).find(selectors.input);
-        var customInputValue = $(el).find(selectors.customInput).val();
+        var customInputArray = $(el).find(selectors.customInput);
 
         for (var i = 0, max = inputArray.length; i < max; i++) {
             var $inputItem = $(inputArray[i]);
 
             if ($inputItem[0].checked) {
                 var name = $inputItem[0].name;
+
+                if (list) { text += '\n - '; }
                 text += _generateText(name);
             }
         }
 
-        if (customInputValue.length) {
-            text += customInputValue;
+        for (var i = 0, max = customInputArray.length; i < max; i++) {
+            var $customInput = $(customInputArray[i]);
+            var customInputValue = $customInput.val();
+
+            if (customInputValue.length) {
+                if (list) { text += '\n - '; }
+                text += customInputValue + ' ';
+            }
         }
     }
 
@@ -293,104 +303,14 @@ var EmailApp = (function($) {
         _checkCheckBoxes(selectors.chinatownRelationship);
 
         text += '\n';
-
         text += '\n' + _generateText('openingConcern') + _generateText('shortTopic') + ' ' + _generateText('reasonBridge');
 
-        if (data.unaffordableReason) {
-            text += '\n' + '- ' + _generateText('unaffordableReason');
-        }
-
-        if (data.economicDisplacementPeopleReason) {
-            text += '\n' + '- ' + _generateText('economicDisplacementPeopleReason');
-        }
-
-        if (data.economicDisplacementBusinessReason) {
-            text += '\n' + '- ' + _generateText('economicDisplacementBusinessReason');
-        }
-
-        if (data.inappropriateUseReason) {
-            text += '\n' + '- ' + _generateText('inappropriateUseReason');
-        }
-
-        if (data.tooTallReason) {
-            text += '\n' + '- ' + _generateText('tooTallReason');
-        }
-
-        if (data.tooMassiveReason) {
-            text += '\n' + '- ' + _generateText('tooMassiveReason');
-        }
-
-        if (data.rejectedByCHAPCReason) {
-            text += '\n' + '- ' + _generateText('rejectedByCHAPCReason');
-        }
-
-        if (data.srHousingReason) {
-            text += '\n' + '- ' + _generateText('srHousingReason');
-        }
-
-        if (data.precendentSettingReason) {
-            text += '\n' + '- ' + _generateText('precendentSettingReason');
-        }
-
-        if (data.memorialReason) {
-            text += '\n' + '- ' + _generateText('memorialReason');
-        }
-
-        if (data.noFamilyReasons) {
-            text += '\n' + '- ' + _generateText('noFamilyReasons');
-        }
-
-        if (data.oppositionDesc1) {
-            text += '\n' + '- ' + data.oppositionDesc1;
-        }
-
-        if (data.oppositionDesc2) {
-            text += '\n' + '- ' + data.oppositionDesc2;
-        }
-
-        if (data.oppositionDesc3) {
-            text += '\n' + '- ' + data.oppositionDesc3;
-        }
+        _checkCheckBoxes(selectors.reasons, true);
 
         text += '\n';
-
         text += '\n' + _generateText('otherUses');
 
-        if (data.socialHousingUse) {
-            text += '\n' + '- ' + _generateText('socialHousingUse');
-        }
-
-        if (data.communityCentreUse) {
-            text += '\n' + '- ' + _generateText('communityCentreUse');
-        }
-
-        if (data.plazaUse) {
-            text += '\n' + '- ' + _generateText('plazaUse');
-        }
-
-        if (data.intergenerationSpaceUse) {
-            text += '\n' + '- ' + _generateText('intergenerationSpaceUse');
-        }
-
-        if (data.greenSpaceUse) {
-            text += '\n' + '- ' + _generateText('greenSpaceUse');
-        }
-
-        if (data.smallerBuildingUse) {
-            text += '\n' + '- ' + _generateText('smallerBuildingUse');
-        }
-
-        if (data.altUse1) {
-            text += '\n' + '- ' + data.altUse1;
-        }
-
-        if (data.altUse2) {
-            text += '\n' + '- ' + data.altUse2;
-        }
-
-        if (data.altUse3) {
-            text += '\n' + '- ' + data.altUse3;
-        }
+        _checkCheckBoxes(selectors.alternatives, true);
 
         text += '\n';
         text += '\n' + _generateText('closingBlock');
