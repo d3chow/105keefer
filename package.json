@@ -1,0 +1,19 @@
+{
+  "name": "105keefer",
+  "version": "1.0.0",
+  "description": "## Contribute",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivymyt/105keefer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivymyt/105keefer/issues"
+  },
+  "homepage": "https://github.com/ivymyt/105keefer#readme"
+}
