@@ -37,23 +37,23 @@
               </div>
               <div class="panel-body">
                 <div class="form-group">
-                  <label class="label label-default" for="firstName">First Name</label>
+                  <label class="label" for="firstName">First Name</label>
                   <input type="text" class="form-control" id="firstName" name="firstName">
                 </div>
                 <div class="form-group">
-                  <label class="label label-default" for="lastName">Last Name</label>
+                  <label class="label" for="lastName">Last Name</label>
                   <input type="text" class="form-control" id="lastName" name="lastName">
                 </div>
                 <div class="form-group">
-                  <label class="label label-default" for="email">Email</label>
+                  <label class="label" for="email">Email</label>
                   <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="form-group">
-                  <label class="label label-default" for="address">Address</label>
+                  <label class="label" for="address">Address</label>
                   <input type="text" class="form-control" id="address" name="address">
                 </div>
                 <div class="form-group">
-                  <label class="label label-default" for="postal">Postal Code</label>
+                  <label class="label" for="postal">Postal Code</label>
                   <input type="text" class="form-control" id="postal" name="postal">
                 </div>
               </div>
@@ -106,7 +106,7 @@
                   </div>
                     <h5>And/or describe your relationship in your own words:</h5>
                     <div class="form-group">
-                      <label class="label label-default" for="relationship">Describe your relationship to Chinatown (Write in full sentences)</label>
+                      <label class="label" for="relationship">Describe your relationship to Chinatown (Write in full sentences)</label>
                       <input type="text" class="form-control js-input-custom" id="relationship" name="customRelationship">
                     </div>
                 </fieldset>
@@ -187,19 +187,21 @@
                       Does not cater to families
                     </label>
                   </div>
-                  <h5>And/or add your own reasons:</h5>
-                  <div class="form-group">
-                    <label class="label label-default" for="oppositionDesc1">Custom Reason 1 (Write in full sentences)</label>
-                    <input type="text" class="form-control js-input-custom" id="oppositionDesc1" name="oppositionDesc1">
+                  <div class="js-add-reason-container">
+                    <div class="form-group">
+                      <label class="label" for="oppositionDesc1">Custom reason 1 (Write in full sentences)</label>
+                      <input type="text" class="form-control js-input-custom" id="oppositionDesc1" name="oppositionDesc1">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label class="label label-default" for="oppositionDesc2">Custom Reason 2 (Write in full sentences)</label>
+                  <button type="button" class="btn btn-primary btn-sm js-add-reason">+ Add custom reason</button>
+                  <!-- <div class="form-group">
+                    <label class="label" for="oppositionDesc2">Custom Reason 2 (Write in full sentences)</label>
                     <input type="text" class="form-control js-input-custom" id="oppositionDesc2" name="oppositionDesc2">
                   </div>
                   <div class="form-group">
-                    <label class="label label-default" for="oppositionDesc3">Custom Reason 3 (Write in full sentences)</label>
+                    <label class="label" for="oppositionDesc3">Custom Reason 3 (Write in full sentences)</label>
                     <input type="text" class="form-control js-input-custom" id="oppositionDesc3" name="oppositionDesc3">
-                  </div>
+                  </div> -->
                 </fieldset>
               </div>
             </div>
@@ -250,15 +252,15 @@
                   </div>
                   <h5>And/or add your own alternative uses:</h5>
                   <div class="form-group">
-                    <label class="label label-default" for="altUse1">Custom Alternative Use 1</label>
+                    <label class="label" for="altUse1">Custom Alternative Use 1</label>
                     <input type="text" class="form-control js-input-custom" id="altUse1" name="altUse1">
                   </div>
                   <div class="form-group">
-                    <label class="label label-default" for="altUse2">Custom Alternative Use 2</label>
+                    <label class="label" for="altUse2">Custom Alternative Use 2</label>
                     <input type="text" class="form-control js-input-custom" id="altUse2" name="altUse2">
                   </div>
                   <div class="form-group">
-                    <label class="label label-default" for="altUse3">Custom Alternative Use 3</label>
+                    <label class="label" for="altUse3">Custom Alternative Use 3</label>
                     <input type="text" class="form-control js-input-custom" id="altUse3" name="altUse3">
                   </div>
                 </fieldset>
@@ -271,7 +273,6 @@
         </form>
       </div>
 
-    <div class="row">
       <div class="col-md-12">
         <hr/>
         <h4>Generated email</h4>
@@ -288,16 +289,15 @@
       <br>
       <div class="col-md-12">
         <div class="form-group">
-          <label class="label label-default" for="subjectLine">Generated Subject Line</label>
+          <label class="label" for="subjectLine">Generated Subject Line</label>
           <input type="text" class="form-control js-output-subject" id="subjectLine" name="subjectLine" />
         </div>
         <div class="form-group">
-          <label class="label label-default" for="outputLetter">Generated Letter / Email (Please edit and customize as necessary)</label>
+          <label class="label" for="outputLetter">Generated Letter / Email (Please edit and customize as necessary)</label>
           <textarea class="form-control js-output-letter" id="outputLetter" rows="20" data-output-letter></textarea>
         </div>
         <a class="btn btn-primary js-send">Send Email</a>
       </div>
-    </div>
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -305,6 +305,7 @@
 
   <script src="js/vendor/bootstrap.min.js"></script>
 
+  <script src="js/textBank.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
