@@ -8,9 +8,9 @@ var paths = {
     css: {
         src: './less/styles.less',
         watch: './less/**/*',
-        dest: './public/css',
+        dest: './docs/css',
     }
-}
+}docs
 
 // Define css gulp tasks
 gulp.task('css-clean', function () {
