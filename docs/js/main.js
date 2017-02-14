@@ -217,8 +217,13 @@ var EmailApp = (function($) {
         form: '.js-form',
         outputLetter: '.js-output-letter',
         subjectLine: '.js-output-subject',
-        send: '.js-send'
+        send: '.js-send',
+        input: '.js-input',
+        customInput: '.js-input-custom',
+        chinatownRelationship: '.js-fieldset-relationship'
     }
+
+    var text = '';
 
     var init = function() {
         $(selectors.form).on('submit', function(ev) {
@@ -258,44 +263,37 @@ var EmailApp = (function($) {
         return TextBank[key][randNum];
     }
 
+    var _checkCheckBoxes = function(el) {
+        var inputArray = $(el).find(selectors.input);
+        var customInputValue = $(el).find(selectors.customInput).val();
+
+        for (var i = 0, max = inputArray.length; i < max; i++) {
+            var $inputItem = $(inputArray[i]);
+
+            if ($inputItem[0].checked) {
+                var name = $inputItem[0].name;
+                text += _generateText(name);
+            }
+        }
+
+        if (customInputValue.length) {
+            text += customInputValue;
+        }
+    }
+
     var _outputSubjectLine = function() {
         var subjectLine = _generateText('subjectLine');
         $(selectors.subjectLine).val(subjectLine);
     }
 
     var _outputLetter = function(data) {
-        var text = _generateText('openingAddress') + '\n';
+        text = _generateText('openingAddress') + '\n';
         text += '\n' + _generateText('openingSentence') + _generateText('topic') + '. ';
 
-        if (data.currentlyLive) {
-            text += _generateText('currentlyLive');
-        }
-
-        if (data.previouslyLived) {
-            text += _generateText('previouslyLived');
-        }
-
-        if (data.liveNear) {
-            text += _generateText('liveNear');
-        }
-
-        if (data.work) {
-            text += _generateText('work');
-        }
-
-        if (data.grewUp) {
-            text += _generateText('grewUp');
-        }
-
-        if (data.careAbout) {
-            text += _generateText('careAbout');
-        }
-
-        if (data.customRelationship) {
-            text += data.customRelationship + ' ';
-        }
+        _checkCheckBoxes(selectors.chinatownRelationship);
 
         text += '\n';
+
         text += '\n' + _generateText('openingConcern') + _generateText('shortTopic') + ' ' + _generateText('reasonBridge');
 
         if (data.unaffordableReason) {
