@@ -38,7 +38,7 @@ var EmailApp = (function($) {
         $(selectors.send).on('click', function(ev) {
             var subject = $(selectors.subjectLine).val();
             var body = $(selectors.outputLetter).val();
-            var href = 'mailto:test@test.ca?';
+            var href = 'mailto:mayorandcouncil@vancouver.ca,yan.zeng@vancouver.ca,paul.cheng@vancouver.ca?';
             href += 'subject=' + encodeURIComponent(subject);
             href += '&body=' + encodeURIComponent(body);
 
