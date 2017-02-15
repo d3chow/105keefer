@@ -2,12 +2,14 @@
 // Bootswatch
 // -----------------------------------------------------
 
+/*
 @web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700";
 
 .web-font(@path) {
   @import url("@{path}");
 }
 .web-font(@web-font-path);
+*/
 
 // Navbar =====================================================================
 
@@ -72,6 +74,14 @@
 
 .btn {
   font-family: @headings-font-family;
+
+  &.btn-primary {
+    box-shadow: darken(@brand-primary, 10%) 0 3px 0;
+    
+    &:hover {
+      box-shadow-color: @link-hover-color;
+    }
+  }
 }
 
 // Typography =================================================================
