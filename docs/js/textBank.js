@@ -202,7 +202,7 @@ var TextBank = {
     ],
     otherUses: [
         'Instead of market condos, I would like suggest the following alternatives for the site: ',
-        'The following uses of the site is more appropriate: ',
+        'The following uses of the site are more appropriate: ',
         'I would recommend for the City to convert the site to the following uses instead: ',
         'Here are some of my ideas of what could be on the 105 Keefer site instead of condos: '
     ],
