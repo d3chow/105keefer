@@ -165,12 +165,13 @@ var TextBank = {
         'It is taller than every other building in the surrounding area. ',
         'The height is greater than the average building next to it. ',
         'It is completely out of proportion. The average building around the area is two to three storeys tall and this one is twelve.',
-        'It is too tall at six times the average building height of surrounding buildings'
+        'It is too tall at least four times the average building height of surrounding buildings. '
     ],
     tooMassiveReason: [
         'It is more massive and dense than all the buildings next to it. ',
         'Its mass is out of scale with the neighbourhood. ',
-        'The mass of this building is too large and unfit for the area. '
+        'The mass of this building is too large and unfit for the area. ',
+        'It is 3.5 times more dense than the surrounding buildings making it out of scale for the neighbourhood. '
     ],
     rejectedByCHAPCReason: [
         'It was rejected by the City of Vancouver Chinatown Historic Area Planning Committee. ',
@@ -186,12 +187,12 @@ var TextBank = {
     ],
     precendentSettingReason: [
         'This will set a bad precendent for the all rezonings in Chinatown. ',
-        'Approving this rezoning will set precendent to other rezonings in Chinatown. '
+        'Approving this rezoning will set poor precendent to other rezonings in Chinatown. '
     ],
     memorialReason: [
         'It is a disgrace to treat the Chinese Veterans Memorial as a private front yard. ',
         'The Chinese Veterans Memorial should not be a private front yard for condo owners. ',
-        'Our veterans did not fight wars to have their memorial treated as a private yard for condo owners. '
+        'Our veterans did not fight wars to have their memorial treated as a private yard for condo owners. ',
     ],
     noFamilyReasons: [
         'The significant decrease in family units is not appropriate for Chinatown. ',
@@ -208,18 +209,22 @@ var TextBank = {
     socialHousingUse: [
         'More social housing',
         'Significantly more social housing',
-        'More seniors housing and social housing'
+        'More seniors housing and social housing',
+        'Affordable housing for seniors'
     ],
     communityCentreUse: [
         'A community centre for the neighbourhood',
         'Community centre',
-        'A neighbourhood community centre'
+        'A neighbourhood community centre',
+        'Centre for the community'
     ],
     plazaUse: [
         'An extension of the Memorial Plaza',
         'A plaza for the community',
         'A community plaza',
-        'A plaza'
+        'A plaza',
+        'A public plaza',
+        'A plaza for the public'
     ],
     intergenerationSpaceUse: [
         'An intergeneration space',
@@ -231,19 +236,27 @@ var TextBank = {
         'A park',
         'More green space',
         'A park for the community',
-        'A community park'
+        'A community park',
+        'A green space',
+        'Green space',
+        'More park space',
+        'More community park space',
+        'Public green space'
     ],
     smallerBuildingUse: [
         'Fine-grain buildings that are broken up on the lot',
         'Narrower buildings that respect the saw-tooth nature of the historic area',
-        'Smaller buildlings that make more sense in the fabric of Chinatown'
+        'Smaller buildlings that make more sense in the fabric of Chinatown',
+        'Buildings that are narrower that reflect the character of Chinatown'
     ],
     closingBlock: [
         'In summary, this is a poor proposal and I urge council to reject it.',
         'This is an unacceptable application and council should not approve it.',
         'In conclusion, this proposal is not good for the neighbourhood. Council should not approve it.',
         'Chinatown does not need a development like this. Please reject the proposal.',
-        'This rezoning application should not be approved becuase of the reasons I have listed above'
+        'This rezoning application should not be approved becuase of the reasons I have listed above',
+        'I do not believe that this rezoning proposal is appropriate for the neighbourhood. Therefore, I urge council and staff to reject this application.',
+        'The 105 Keefer rezoning application is not suitable for Chinatown. Staff should not recommend City Council to approve it.'
     ],
     signature: [
         'Yours truly,',
